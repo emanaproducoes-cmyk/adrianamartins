@@ -9,61 +9,65 @@ export function Hero() {
     <>
       <section
         id="topo"
-        className="relative flex min-h-[100svh] items-end overflow-hidden bg-novo-navy-deep pt-20 sm:min-h-[92vh] md:pt-24"
+        className="relative bg-novo-navy-deep pt-24 pb-10 md:pt-28 md:pb-14"
       >
-        {/* Banner completo */}
-        <Image
-          src="/images/hero-adriana.png"
-          alt="Adriana Martins, candidata a Deputada Federal 3030, com a bandeira de Rondônia e o Congresso Nacional ao fundo"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-center"
-        />
+        <div className="mx-auto max-w-7xl px-4 md:px-8">
+          {/* Selo */}
+          <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-novo-orange/40 bg-novo-orange/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-novo-yellow">
+            <ShieldCheck className="size-4" />
+            Candidata a Deputada Federal
+          </span>
 
-        {/* Camada de leitura — cor única (navy) unificando o fundo, sem blur */}
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0 bg-gradient-to-t from-novo-navy-deep via-novo-navy-deep/50 to-novo-navy-deep/20 md:via-novo-navy-deep/35 md:to-novo-navy-deep/10"
-        />
+          {/* Moldura do banner — tamanho contido, não ocupa a tela inteira */}
+          <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-white/10 shadow-2xl shadow-black/40 ring-1 ring-white/5 sm:aspect-[16/10] md:aspect-[21/9]">
+            <Image
+              src="/images/hero-adriana.png"
+              alt="Adriana Martins, candidata a Deputada Federal 3030, com a bandeira de Rondônia e o Congresso Nacional ao fundo"
+              fill
+              priority
+              sizes="(max-width: 768px) 100vw, 1200px"
+              className="object-cover object-center"
+            />
 
-        {/* Selo — topo, centralizado no mobile / esquerda a partir de md */}
-        <span className="absolute left-1/2 top-20 z-10 inline-flex -translate-x-1/2 items-center gap-2 whitespace-nowrap rounded-full border border-novo-orange/40 bg-novo-navy-deep/60 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.15em] text-novo-yellow backdrop-blur-sm sm:text-xs sm:tracking-[0.2em] md:left-8 md:top-24 md:translate-x-0">
-          <ShieldCheck className="size-4" />
-          Candidata a Deputada Federal
-        </span>
+            {/* Camada de leitura — cor única (navy), sem blur */}
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-0 bg-gradient-to-t from-novo-navy-deep via-novo-navy-deep/40 to-transparent"
+            />
 
-        {/* Conteúdo — centralizado/empilhado no mobile, canto inferior direito a partir de md */}
-        <div className="relative z-10 w-full px-4 pb-10 text-center sm:px-6 md:ml-auto md:max-w-xl md:px-8 md:pb-20 md:text-right">
-          <h1 className="font-display text-4xl leading-[0.95] tracking-wide text-white sm:text-5xl md:text-6xl lg:text-7xl">
-            Coragem
-            <br />
-            <span className="text-novo-orange">para Cuidar!</span>
-          </h1>
+            {/* Conteúdo — canto inferior direito do banner */}
+            <div className="absolute inset-x-0 bottom-0 z-10 px-4 pb-5 text-center sm:px-6 sm:pb-8 md:right-0 md:left-auto md:max-w-lg md:px-8 md:pb-10 md:text-right">
+              <h1 className="font-display text-4xl leading-[0.95] tracking-wide text-white sm:text-5xl md:text-6xl">
+                Coragem
+                <br />
+                <span className="text-novo-orange">para Cuidar!</span>
+              </h1>
 
-          <p className="mx-auto mt-4 max-w-md text-pretty text-sm leading-relaxed text-white/85 md:ml-auto md:mr-0 md:text-base">
-            Adriana Martins leva a Brasília uma visão{' '}
-            <strong className="font-semibold text-white">técnica, jurídica e moderna</strong> para os
-            desafios de Rondônia.
-          </p>
+              <p className="mx-auto mt-3 max-w-md text-pretty text-xs leading-relaxed text-white/85 sm:text-sm md:ml-auto md:mr-0 md:text-base">
+                Adriana Martins leva a Brasília uma visão{' '}
+                <strong className="font-semibold text-white">técnica, jurídica e moderna</strong> para os
+                desafios de Rondônia.
+              </p>
 
-          <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center md:mt-7 md:items-end md:justify-end">
-            <a
-              href={whatsappLink('Olá! Quero apoiar a campanha da Adriana Martins 3030.')}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-novo-orange px-7 py-4 text-base font-bold uppercase tracking-wide text-white shadow-lg shadow-novo-orange/25 transition-all duration-300 hover:scale-[1.03] hover:bg-novo-orange-dark hover:shadow-xl hover:shadow-novo-orange/40 sm:w-auto"
-            >
-              <HeartHandshake className="size-5" />
-              Quero Apoiar
-              <ArrowRight className="size-5 transition-transform duration-300 group-hover:translate-x-1" />
-            </a>
-            <a
-              href="#propostas"
-              className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/30 px-7 py-4 text-base font-bold uppercase tracking-wide text-white transition-all duration-300 hover:scale-[1.03] hover:border-novo-yellow hover:bg-white/5 hover:text-novo-yellow sm:w-auto"
-            >
-              Conhecer o Plano
-            </a>
+              <div className="mt-4 flex flex-col items-center gap-2.5 sm:flex-row sm:justify-center md:mt-5 md:items-end md:justify-end">
+                <a
+                  href={whatsappLink('Olá! Quero apoiar a campanha da Adriana Martins 3030.')}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-novo-orange px-6 py-3 text-sm font-bold uppercase tracking-wide text-white shadow-lg shadow-novo-orange/25 transition-all duration-300 hover:scale-[1.03] hover:bg-novo-orange-dark hover:shadow-xl hover:shadow-novo-orange/40 sm:w-auto md:px-7 md:py-4 md:text-base"
+                >
+                  <HeartHandshake className="size-4 md:size-5" />
+                  Quero Apoiar
+                  <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1 md:size-5" />
+                </a>
+                <a
+                  href="#propostas"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/30 px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition-all duration-300 hover:scale-[1.03] hover:border-novo-yellow hover:bg-white/5 hover:text-novo-yellow sm:w-auto md:px-7 md:py-4 md:text-base"
+                >
+                  Conhecer o Plano
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
