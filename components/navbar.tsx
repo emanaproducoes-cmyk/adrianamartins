@@ -42,7 +42,7 @@ export function Navbar() {
             alt="Partido NOVO"
             width={280}
             height={80}
-            className="-mt-2 block h-auto w-24 object-contain sm:-mt-3 sm:w-32 md:-mt-4 md:w-40"
+            className="-mt-6 block h-auto w-24 object-contain sm:-mt-8 sm:w-32 md:-mt-10 md:w-40"
           />
 
           {/* Efeito scanner na marca */}
