@@ -60,7 +60,7 @@ export function Hero() {
                 <span
                   className="text-novo-orange"
                   style={{
-                    WebkitTextStroke: '3px #ffffff',
+                    WebkitTextStroke: '2px #ffffff',
                     paintOrder: 'stroke fill',
                     textShadow: 'none',
                   }}
@@ -129,11 +129,17 @@ export function Hero() {
           Coragem para cuidar de Rondônia — conheça o plano de governo
         </p>
 
-        {/* Seta flutuante indicando rolagem */}
-        <ChevronDown
-          aria-hidden
-          className="animate-float mx-auto mt-1.5 size-5 text-white sm:size-6"
-        />
+        {/* Ghost button com seta balançando, indicando rolagem */}
+        <a
+          href="#propostas"
+          aria-label="Rolar para conhecer o plano de governo"
+          className="group relative mx-auto mt-2.5 flex size-9 items-center justify-center rounded-full border border-white/40 bg-transparent text-white transition-all duration-300 hover:border-white hover:bg-white/10 sm:mt-3 sm:size-10"
+        >
+          <ChevronDown
+            aria-hidden
+            className="size-4 animate-bounce transition-transform duration-300 group-hover:translate-y-0.5 sm:size-5"
+          />
+        </a>
       </div>
     </>
   )
