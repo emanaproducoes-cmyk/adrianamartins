@@ -53,7 +53,7 @@ export function RondoniaProblemas() {
             <span className="text-sm font-bold uppercase tracking-[0.25em] text-novo-orange">
               O Diagnóstico
             </span>
-            <h2 className="mt-3 text-balance font-display text-5xl leading-none tracking-wide text-white md:text-6xl">
+            <h2 className="mt-3 text-balance font-display text-2xl leading-none tracking-wide text-white md:text-6xl">
               Rondônia não precisa de discursos vindos de Brasília. Precisa de{' '}
               <span className="text-novo-orange">representatividade FEDERAL</span> prestando
               resultados ao nosso estado.
