@@ -93,7 +93,7 @@ export function Hero() {
               className="mt-4 flex items-center justify-center gap-2 text-center text-sm text-white/50 transition-colors hover:text-novo-yellow"
             >
               <MessageCircle className="size-4" />
-              Prefiro falar direto no WhatsApp oficial {WHATSAPP_DISPLAY}
+              Prefiro falar direto no WhatsApp oficial ({WHATSAPP_DISPLAY})
             </a>
           </div>
         </Reveal>
