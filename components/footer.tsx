@@ -26,21 +26,35 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-14 md:px-8">
         <div className="grid gap-10 md:grid-cols-3">
           {/* Marca */}
-          <div>
-            <Image
-              src="/images/Logo_AM_Stroke_6px.png"
-              alt="Adriana Martins 3030"
-              width={600}
-              height={650}
-              className="h-auto w-36 md:w-40"
-              priority={false}
-            />
-            <p className="mt-1 font-display text-2xl italic tracking-wide text-novo-orange">
-              Coragem para Cuidar!
-            </p>
-            <p className="mt-2 max-w-xs text-sm leading-relaxed text-white/60">
-              Adriana Martins — Candidata a Deputada Federal por Rondônia pelo Partido NOVO.
-            </p>
+          <div className="relative overflow-hidden rounded-2xl">
+            {/* Foto de fundo, mesclada e esmaecida no final para não cortar seco */}
+            <div className="pointer-events-none absolute inset-0 -z-10">
+              <Image
+                src="/images/ADRIANA_Perfil.png"
+                alt=""
+                fill
+                aria-hidden
+                className="object-cover object-top opacity-25 mix-blend-luminosity"
+              />
+              <div className="absolute inset-0 bg-gradient-to-b from-novo-navy-deep/10 via-novo-navy-deep/60 to-novo-navy-deep" />
+            </div>
+
+            <div className="relative px-1 py-1">
+              <Image
+                src="/images/Logo_AM_Stroke_6px.png"
+                alt="Adriana Martins 3030"
+                width={600}
+                height={650}
+                className="h-auto w-36 md:w-40"
+                priority={false}
+              />
+              <p className="mt-1 font-display text-2xl italic tracking-wide text-novo-orange">
+                Coragem para Cuidar!
+              </p>
+              <p className="mt-2 max-w-xs text-sm leading-relaxed text-white/60">
+                Adriana Martins — Candidata a Deputada Federal por Rondônia pelo Partido NOVO.
+              </p>
+            </div>
           </div>
 
           {/* Navegação */}
