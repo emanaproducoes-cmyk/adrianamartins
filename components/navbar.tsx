@@ -22,16 +22,16 @@ export function Navbar() {
           : 'bg-transparent',
       )}
     >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 md:px-8">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-2 md:px-8">
         {/* Marca — logo no lugar do texto */}
         <a href="#topo" className="group flex items-center" aria-label="Adriana Martins - início">
           <Image
             src="/images/Logo_AM_.png"
             alt="Adriana Martins 3030"
-            width={160}
-            height={64}
+            width={280}
+            height={140}
             priority
-            className="h-9 w-auto object-contain transition-transform duration-300 group-hover:scale-105 sm:h-10 md:h-14"
+            className="h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105 sm:h-16 md:h-20"
           />
         </a>
         {/* Links desktop */}
