@@ -26,7 +26,7 @@ export function Navbar() {
         {/* Marca — logo no lugar do texto */}
         <a href="#topo" className="group flex items-center" aria-label="Adriana Martins - início">
           <Image
-            src="/images/novo-logo.png"
+            src="/images/logo-adriana.png"
             alt="Adriana Martins 3030"
             width={160}
             height={64}
