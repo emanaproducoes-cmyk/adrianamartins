@@ -24,7 +24,7 @@ export function Navbar() {
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-2 md:px-8">
         {/* Marca — logo no lugar do texto */}
-        <a href="#topo" className="group flex items-center" aria-label="Adriana Martins - início">
+        <a href="#topo" className="group flex flex-col items-start gap-1" aria-label="Adriana Martins - início">
           <Image
             src="/images/Logo_AM_.png"
             alt="Adriana Martins 3030"
@@ -32,6 +32,13 @@ export function Navbar() {
             height={140}
             priority
             className="h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105 sm:h-16 md:h-20"
+          />
+          <Image
+            src="/images/novo-logo.png"
+            alt="Partido NOVO"
+            width={100}
+            height={28}
+            className="h-4 w-auto object-contain opacity-90 sm:h-5"
           />
         </a>
         {/* Links desktop */}
