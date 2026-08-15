@@ -37,23 +37,23 @@ export function Hero() {
 
             {/* Conteúdo — canto inferior direito do banner */}
             <div className="absolute inset-x-0 bottom-0 z-10 px-4 pb-5 text-center [text-shadow:0_2px_10px_rgba(0,0,0,0.55)] sm:px-6 sm:pb-8 md:right-0 md:left-auto md:max-w-lg md:px-8 md:pb-10 md:text-right">
-              <h1 className="font-display text-4xl leading-[0.95] tracking-wide text-white sm:text-5xl md:text-6xl">
-                Coragem
-                <br />
-                <span className="relative mt-2 inline-block overflow-hidden rounded-2xl border border-white/40 bg-white/15 px-4 py-1.5 text-novo-orange shadow-lg shadow-black/20 backdrop-blur-md sm:px-5 sm:py-2">
-                  {/* Ruído sutil */}
-                  <span
-                    aria-hidden
-                    className="pointer-events-none absolute inset-0 opacity-[0.15] mix-blend-overlay"
-                    style={{
-                      backgroundImage:
-                        "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
-                      backgroundRepeat: 'repeat',
-                    }}
-                  />
-                  <span className="relative z-10">para Cuidar!</span>
-                </span>
-              </h1>
+              <div className="relative mt-2 inline-block overflow-hidden rounded-lg bg-white/10 px-4 py-3 backdrop-blur-md sm:px-6 sm:py-4">
+                {/* Ruído sutil */}
+                <span
+                  aria-hidden
+                  className="pointer-events-none absolute inset-0 opacity-[0.12] mix-blend-overlay"
+                  style={{
+                    backgroundImage:
+                      "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
+                    backgroundRepeat: 'repeat',
+                  }}
+                />
+                <h1 className="relative z-10 font-display text-4xl leading-[0.95] tracking-wide text-white sm:text-5xl md:text-6xl">
+                  Coragem
+                  <br />
+                  <span className="text-novo-orange">para Cuidar!</span>
+                </h1>
+              </div>
 
               <p className="mx-auto mt-3 max-w-md text-pretty text-xs leading-relaxed text-white/85 sm:text-sm md:ml-auto md:mr-0 md:text-base">
                 Adriana Martins leva a Brasília uma visão{' '}
