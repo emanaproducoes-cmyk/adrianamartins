@@ -1,6 +1,5 @@
 'use client'
 
-import { useState } from 'react'
 import {
   Truck,
   PlaneTakeoff,
@@ -12,7 +11,7 @@ import {
   Home,
   HeartHandshake,
   Wheat,
-  ChevronDown,
+  ArrowDown,
 } from 'lucide-react'
 import { Reveal } from '@/components/reveal'
 import { CountUp } from '@/components/count-up'
@@ -22,21 +21,36 @@ type Cor = 'orange' | 'cyan'
 
 const COR_MAP: Record<
   Cor,
-  { border: string; badgeBg: string; badgeText: string; text: string; ring: string }
+  {
+    border: string
+    badgeBg: string
+    badgeText: string
+    text: string
+    ring: string
+    hoverShadow: string
+    hoverBorder: string
+    glow: string
+  }
 > = {
   orange: {
     border: 'border-l-novo-orange',
     badgeBg: 'bg-novo-orange',
     badgeText: 'text-novo-orange',
     text: 'text-novo-orange',
-    ring: 'hover:border-novo-orange/60',
+    ring: 'hover:border-novo-orange/70',
+    hoverShadow: 'hover:shadow-novo-orange/25',
+    hoverBorder: 'border-novo-orange/50',
+    glow: 'group-hover:bg-novo-orange/10',
   },
   cyan: {
     border: 'border-l-cyan-400',
     badgeBg: 'bg-cyan-400',
     badgeText: 'text-cyan-400',
     text: 'text-cyan-400',
-    ring: 'hover:border-cyan-400/60',
+    ring: 'hover:border-cyan-400/70',
+    hoverShadow: 'hover:shadow-cyan-400/25',
+    hoverBorder: 'border-cyan-400/50',
+    glow: 'group-hover:bg-cyan-400/10',
   },
 }
 
@@ -147,35 +161,47 @@ function oposto(cor: Cor): Cor {
   return cor === 'orange' ? 'cyan' : 'orange'
 }
 
-function ResumoCard({
-  eixo,
-  ativo,
-  onClick,
-}: {
-  eixo: (typeof EIXOS)[number]
-  ativo: boolean
-  onClick: () => void
-}) {
+function scrollToEixo(numero: string) {
+  const el = document.getElementById(`eixo-${numero}`)
+  if (el) {
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
+}
+
+function ResumoCard({ eixo }: { eixo: (typeof EIXOS)[number] }) {
   const cor = COR_MAP[eixo.cor]
   const Icon = eixo.icon
 
   return (
     <button
       type="button"
-      onClick={onClick}
-      aria-expanded={ativo}
+      onClick={() => scrollToEixo(eixo.numero)}
       className={cn(
-        'group relative h-full rounded-2xl border border-l-4 border-white/10 bg-novo-navy p-6 text-left shadow-lg shadow-black/20 transition-all duration-300',
+        'group relative h-full overflow-hidden rounded-2xl border border-l-4 border-white/10 bg-novo-navy p-6 text-left shadow-lg shadow-black/20 transition-all duration-300 ease-out',
+        'hover:-translate-y-1.5 hover:scale-[1.02] hover:shadow-2xl',
         cor.border,
         cor.ring,
-        ativo && 'ring-2 ring-white/20',
+        cor.hoverShadow,
       )}
     >
-      <div className="flex items-center justify-between">
-        <Icon className={cn('size-7', cor.text)} />
+      {/* glow que aparece no hover */}
+      <span
+        className={cn(
+          'pointer-events-none absolute -right-10 -top-10 size-40 rounded-full opacity-0 blur-3xl transition-opacity duration-300 group-hover:opacity-100',
+          cor.glow,
+        )}
+      />
+
+      <div className="relative flex items-center justify-between">
+        <Icon
+          className={cn(
+            'size-7 transition-transform duration-300 ease-out group-hover:scale-110 group-hover:-rotate-6',
+            cor.text,
+          )}
+        />
         <span
           className={cn(
-            'rounded-full px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-novo-navy',
+            'rounded-full px-3 py-1 text-[11px] font-bold uppercase tracking-wide text-novo-navy transition-transform duration-300 group-hover:scale-105',
             cor.badgeBg,
           )}
         >
@@ -183,15 +209,18 @@ function ResumoCard({
         </span>
       </div>
 
-      <h3 className="mt-4 font-display text-2xl leading-none tracking-wide text-white">{eixo.tema}</h3>
-      <p className="mt-2 text-sm leading-relaxed text-white/60">{eixo.resumo}</p>
+      <h3 className="relative mt-4 font-display text-2xl leading-none tracking-wide text-white">
+        {eixo.tema}
+      </h3>
+      <p className="relative mt-2 text-sm leading-relaxed text-white/60 transition-colors duration-300 group-hover:text-white/80">
+        {eixo.resumo}
+      </p>
 
-      <div className="mt-4 flex items-center justify-between">
+      <div className="relative mt-4 flex items-center justify-between">
         <span className={cn('text-sm font-bold', cor.text)}>{eixo.hashtag}</span>
-        <ChevronDown
+        <ArrowDown
           className={cn(
-            'size-4 text-white/40 transition-transform duration-300',
-            ativo && 'rotate-180 text-white',
+            'size-4 text-white/40 transition-all duration-300 group-hover:translate-y-1 group-hover:text-white',
           )}
         />
       </div>
@@ -214,9 +243,22 @@ function DetalheCard({
 }) {
   const c = COR_MAP[cor]
   return (
-    <div className={cn('rounded-2xl border border-l-4 border-white/10 bg-novo-navy p-6', c.border)}>
-      <h4 className={cn('flex items-center gap-2 font-display text-lg tracking-wide', c.text)}>
-        <IconTitulo className="size-5" />
+    <div
+      className={cn(
+        'group rounded-2xl border border-l-4 border-white/10 bg-novo-navy p-6 transition-all duration-300 ease-out',
+        'hover:-translate-y-1 hover:shadow-xl',
+        c.border,
+        c.ring,
+        c.hoverShadow,
+      )}
+    >
+      <h4
+        className={cn(
+          'flex items-center gap-2 font-display text-lg tracking-wide transition-transform duration-300 group-hover:translate-x-0.5',
+          c.text,
+        )}
+      >
+        <IconTitulo className="size-5 transition-transform duration-300 group-hover:scale-110" />
         {titulo}
       </h4>
       <p className="mt-3 text-sm leading-relaxed text-white/70">{texto}</p>
@@ -225,10 +267,58 @@ function DetalheCard({
   )
 }
 
-export function MinhasPropostas() {
-  const [ativo, setAtivo] = useState(0)
-  const eixo = EIXOS[ativo]
+function EixoDetalhado({ eixo }: { eixo: (typeof EIXOS)[number] }) {
+  return (
+    <Reveal>
+      <div
+        id={`eixo-${eixo.numero}`}
+        className="scroll-mt-24 rounded-3xl border border-white/10 bg-novo-navy/95 p-6 md:p-10"
+      >
+        <div className="flex flex-col gap-4 border-b border-white/10 pb-6 sm:flex-row sm:items-center sm:justify-between">
+          <h3 className="font-display text-2xl leading-none tracking-wide text-white md:text-3xl">
+            Eixo Temático {eixo.numero}: {eixo.nomeCompleto}
+          </h3>
+          <span
+            className={cn(
+              'inline-flex w-fit items-center rounded-full border px-4 py-1.5 text-xs font-bold uppercase tracking-wide',
+              COR_MAP[eixo.cor].text,
+              COR_MAP[eixo.cor].hoverBorder,
+            )}
+          >
+            Diagnóstico Aprofundado
+          </span>
+        </div>
 
+        <div className="mt-6 grid gap-5 md:grid-cols-2">
+          <DetalheCard
+            cor={eixo.cor}
+            titulo={eixo.diagnostico.titulo}
+            IconTitulo={eixo.diagnostico.icon}
+            texto={eixo.diagnostico.texto}
+          >
+            <p className="mt-4 text-sm leading-relaxed text-white/85">
+              <strong className="font-semibold text-white">{eixo.diagnostico.destaqueLabel}:</strong>{' '}
+              {eixo.diagnostico.destaqueTexto}
+            </p>
+          </DetalheCard>
+
+          <DetalheCard
+            cor={oposto(eixo.cor)}
+            titulo={eixo.solucao.titulo}
+            IconTitulo={eixo.solucao.icon}
+            texto={eixo.solucao.texto}
+          >
+            <p className="mt-4 text-sm leading-relaxed text-white/85">
+              <strong className="font-semibold text-white">Slogan/Hashtag:</strong> {eixo.solucao.slogan}
+            </p>
+          </DetalheCard>
+        </div>
+      </div>
+    </Reveal>
+  )
+}
+
+export function MinhasPropostas() {
   return (
     <section id="propostas" className="relative bg-muted py-20 md:py-28">
       <div className="mx-auto max-w-7xl px-4 md:px-8">
@@ -253,60 +343,21 @@ export function MinhasPropostas() {
           </Reveal>
         </div>
 
-        {/* Cards-resumo — clicáveis, abrem o diagnóstico aprofundado abaixo */}
+        {/* Cards-resumo — clicáveis, rolam até o diagnóstico correspondente */}
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {EIXOS.map((e, i) => (
             <Reveal key={e.numero} delay={i * 100} className="h-full">
-              <ResumoCard eixo={e} ativo={ativo === i} onClick={() => setAtivo(i)} />
+              <ResumoCard eixo={e} />
             </Reveal>
           ))}
         </div>
 
-        {/* Diagnóstico aprofundado do eixo selecionado */}
-        <Reveal key={eixo.numero}>
-          <div className="mt-10 rounded-3xl border border-white/10 bg-novo-navy/95 p-6 md:p-10">
-            <div className="flex flex-col gap-4 border-b border-white/10 pb-6 sm:flex-row sm:items-center sm:justify-between">
-              <h3 className="font-display text-2xl leading-none tracking-wide text-white md:text-3xl">
-                Eixo Temático {eixo.numero}: {eixo.nomeCompleto}
-              </h3>
-              <span
-                className={cn(
-                  'inline-flex w-fit items-center rounded-full border px-4 py-1.5 text-xs font-bold uppercase tracking-wide',
-                  COR_MAP[eixo.cor].text,
-                  eixo.cor === 'orange' ? 'border-novo-orange/50' : 'border-cyan-400/50',
-                )}
-              >
-                Diagnóstico Aprofundado
-              </span>
-            </div>
-
-            <div className="mt-6 grid gap-5 md:grid-cols-2">
-              <DetalheCard
-                cor={eixo.cor}
-                titulo={eixo.diagnostico.titulo}
-                IconTitulo={eixo.diagnostico.icon}
-                texto={eixo.diagnostico.texto}
-              >
-                <p className="mt-4 text-sm leading-relaxed text-white/85">
-                  <strong className="font-semibold text-white">{eixo.diagnostico.destaqueLabel}:</strong>{' '}
-                  {eixo.diagnostico.destaqueTexto}
-                </p>
-              </DetalheCard>
-
-              <DetalheCard
-                cor={oposto(eixo.cor)}
-                titulo={eixo.solucao.titulo}
-                IconTitulo={eixo.solucao.icon}
-                texto={eixo.solucao.texto}
-              >
-                <p className="mt-4 text-sm leading-relaxed text-white/85">
-                  <strong className="font-semibold text-white">Slogan/Hashtag:</strong>{' '}
-                  {eixo.solucao.slogan}
-                </p>
-              </DetalheCard>
-            </div>
-          </div>
-        </Reveal>
+        {/* Diagnóstico aprofundado dos 4 eixos, todos visíveis, empilhados */}
+        <div className="mt-10 flex flex-col gap-8">
+          {EIXOS.map((e) => (
+            <EixoDetalhado key={e.numero} eixo={e} />
+          ))}
+        </div>
 
         {/* Contadores */}
         <Reveal>
