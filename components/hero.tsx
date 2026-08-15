@@ -9,7 +9,7 @@ export function Hero() {
     <>
       <section
         id="topo"
-        className="relative bg-novo-navy-deep pt-44 pb-10 sm:pt-52 md:pt-60 md:pb-14"
+        className="relative bg-novo-navy-deep pt-24 pb-10 md:pt-28 md:pb-14"
       >
         <div className="mx-auto max-w-7xl px-4 md:px-8">
           {/* Selo */}
@@ -26,7 +26,7 @@ export function Hero() {
               fill
               priority
               sizes="(max-width: 768px) 100vw, 1200px"
-              className="object-cover object-[68%_center] sm:object-[60%_center] md:object-center"
+              className="object-cover object-[68%_center] sm:object-[62%_center] md:object-[58%_center] lg:object-[55%_center]"
             />
 
             {/* Efeito scanner — faixa de luz que varre o banner no hover (via transform, mais confiável) */}
