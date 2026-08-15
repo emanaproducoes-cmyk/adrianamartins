@@ -24,21 +24,31 @@ export function Navbar() {
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-2 md:px-8">
         {/* Marca — logo no lugar do texto */}
-        <a href="#topo" className="group flex flex-col items-start gap-1" aria-label="Adriana Martins - início">
+        <a
+          href="#topo"
+          className="group/logo relative flex flex-col items-start gap-1.5 overflow-hidden"
+          aria-label="Adriana Martins - início"
+        >
           <Image
             src="/images/Logo_AM_.png"
             alt="Adriana Martins 3030"
             width={280}
             height={140}
             priority
-            className="h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105 sm:h-16 md:h-20"
+            className="h-14 w-auto object-contain transition-transform duration-300 group-hover/logo:scale-105 sm:h-16 md:h-20"
           />
           <Image
             src="/images/novo-logo.png"
             alt="Partido NOVO"
-            width={100}
-            height={28}
-            className="h-4 w-auto object-contain opacity-90 sm:h-5"
+            width={140}
+            height={40}
+            className="h-6 w-auto object-contain sm:h-7 md:h-8"
+          />
+
+          {/* Efeito scanner na marca */}
+          <span
+            aria-hidden
+            className="pointer-events-none absolute inset-y-0 left-0 z-10 w-1/4 -translate-x-[200%] skew-x-12 bg-gradient-to-r from-transparent via-white/50 to-transparent transition-transform duration-700 ease-out group-hover/logo:translate-x-[500%]"
           />
         </a>
         {/* Links desktop */}
