@@ -43,7 +43,7 @@ export function Hero() {
                 <span
                   className="text-novo-orange"
                   style={{
-                    WebkitTextStroke: '2px #ffffff',
+                    WebkitTextStroke: '4px #ffffff',
                     paintOrder: 'stroke fill',
                   }}
                 >
