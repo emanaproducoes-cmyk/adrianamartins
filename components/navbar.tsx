@@ -27,19 +27,19 @@ export function Navbar() {
         <a
           href="#topo"
           aria-label="Adriana Martins - início"
-          className="group/logo relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-novo-orange px-5 py-2.5 text-sm font-bold uppercase tracking-wide text-white shadow-md transition-all duration-300 hover:scale-[1.04] hover:shadow-[0_0_10px_2px_rgba(251,188,15,0.55),0_0_28px_10px_rgba(236,103,28,0.55)]"
+          className="group/logo relative inline-flex h-11 w-[150px] items-center justify-center overflow-hidden rounded-full shadow-md transition-all duration-300 hover:scale-[1.04] hover:shadow-[0_0_10px_2px_rgba(251,188,15,0.55),0_0_28px_10px_rgba(236,103,28,0.55)]"
         >
-          <span
-            aria-hidden
-            className="pointer-events-none absolute inset-y-0 left-0 z-0 w-1/4 -translate-x-[200%] skew-x-12 bg-gradient-to-r from-transparent via-white/40 to-transparent transition-transform duration-500 ease-out group-hover/logo:translate-x-[500%]"
-          />
           <Image
             src="/images/home_button.png"
             alt="Adriana Martins 3030 - Partido NOVO"
-            width={140}
-            height={40}
+            fill
             priority
-            className="relative z-10 h-6 w-auto object-contain"
+            sizes="150px"
+            className="object-cover"
+          />
+          <span
+            aria-hidden
+            className="pointer-events-none absolute inset-y-0 left-0 z-10 w-1/4 -translate-x-[200%] skew-x-12 bg-gradient-to-r from-transparent via-white/40 to-transparent transition-transform duration-500 ease-out group-hover/logo:translate-x-[500%]"
           />
         </a>
         {/* Links desktop */}
