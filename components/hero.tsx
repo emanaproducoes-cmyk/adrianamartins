@@ -124,8 +124,8 @@ export function Hero() {
       </section>
 
       {/* Barra laranja logo abaixo do Hero */}
-      <div className="relative bg-novo-orange px-4 py-3 text-center">
-        <p className="text-xs font-bold uppercase tracking-[0.1em] text-white sm:text-sm sm:tracking-[0.15em] md:text-base">
+      <div className="relative bg-novo-orange px-4 py-5 text-center sm:py-6 md:py-7">
+        <p className="text-sm font-bold uppercase tracking-[0.1em] text-white sm:text-base sm:tracking-[0.15em] md:text-lg">
           Coragem para cuidar de Rondônia — conheça o plano de governo
         </p>
 
