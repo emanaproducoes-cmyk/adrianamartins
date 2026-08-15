@@ -29,8 +29,8 @@ export function Footer() {
           <div className="relative min-h-[280px] overflow-hidden rounded-2xl">
             {/* Foto de fundo, mesclada e esmaecida no final para não cortar seco */}
             <div
-              className="pointer-events-none absolute inset-0 -z-10 bg-cover bg-top opacity-40"
-              style={{ backgroundImage: "url('/images/ADRIANA_Perfil.png')" }}
+              className="pointer-events-none absolute inset-0 -z-10 bg-cover bg-top opacity-35 mix-blend-luminosity"
+              style={{ backgroundImage: "url('/images/ADRIANA_Perfil.webp')" }}
               aria-hidden
             />
             <div className="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-novo-navy-deep/10 via-novo-navy-deep/60 to-novo-navy-deep" />
