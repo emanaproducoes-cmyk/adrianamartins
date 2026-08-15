@@ -22,7 +22,7 @@ export function Navbar() {
           : 'bg-transparent',
       )}
     >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-2 md:px-8">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 md:px-8">
         {/* Marca — logo no lugar do texto */}
         <a
           href="#topo"
@@ -35,14 +35,14 @@ export function Navbar() {
             width={280}
             height={140}
             priority
-            className="h-auto w-28 object-contain transition-transform duration-300 group-hover/logo:scale-105 sm:w-32 md:w-40"
+            className="h-auto w-24 object-contain transition-transform duration-300 group-hover/logo:scale-105 sm:w-32 md:w-40"
           />
           <Image
             src="/images/novo-logo.png"
             alt="Partido NOVO"
             width={280}
             height={80}
-            className="h-auto w-28 object-contain sm:w-32 md:w-40"
+            className="h-auto w-24 object-contain sm:w-32 md:w-40"
           />
 
           {/* Efeito scanner na marca */}
