@@ -29,10 +29,10 @@ export function Hero() {
               className="object-cover object-center"
             />
 
-            {/* Efeito scanner — faixa de luz que varre o banner no hover */}
+            {/* Efeito scanner — faixa de luz que varre o banner no hover (via transform, mais confiável) */}
             <div
               aria-hidden
-              className="pointer-events-none absolute inset-y-0 -left-1/2 z-[5] w-1/3 -skew-x-12 bg-gradient-to-r from-transparent via-white/25 to-transparent opacity-0 transition-all duration-700 ease-out group-hover/banner:left-full group-hover/banner:opacity-100"
+              className="pointer-events-none absolute inset-y-0 left-0 z-[5] w-1/3 -translate-x-[150%] skew-x-12 bg-gradient-to-r from-transparent via-white/25 to-transparent transition-transform duration-700 ease-out group-hover/banner:translate-x-[350%]"
             />
 
             {/* Conteúdo — canto inferior direito do banner */}
@@ -58,7 +58,7 @@ export function Hero() {
                 >
                   <span
                     aria-hidden
-                    className="pointer-events-none absolute inset-y-0 -left-1/2 z-0 w-1/3 -skew-x-12 bg-gradient-to-r from-transparent via-white/40 to-transparent opacity-0 transition-all duration-500 ease-out group-hover/btn1:left-full group-hover/btn1:opacity-100"
+                    className="pointer-events-none absolute inset-y-0 left-0 z-0 w-1/3 -translate-x-[150%] skew-x-12 bg-gradient-to-r from-transparent via-white/40 to-transparent transition-transform duration-500 ease-out group-hover/btn1:translate-x-[350%]"
                   />
                   <HeartHandshake className="relative z-10 size-4 md:size-5" />
                   <span className="relative z-10">Quero Apoiar</span>
@@ -70,7 +70,7 @@ export function Hero() {
                 >
                   <span
                     aria-hidden
-                    className="pointer-events-none absolute inset-y-0 -left-1/2 z-0 w-1/3 -skew-x-12 bg-gradient-to-r from-transparent via-white/25 to-transparent opacity-0 transition-all duration-500 ease-out group-hover/btn2:left-full group-hover/btn2:opacity-100"
+                    className="pointer-events-none absolute inset-y-0 left-0 z-0 w-1/3 -translate-x-[150%] skew-x-12 bg-gradient-to-r from-transparent via-white/25 to-transparent transition-transform duration-500 ease-out group-hover/btn2:translate-x-[350%]"
                   />
                   <span className="relative z-10">Conhecer o Plano</span>
                 </a>
