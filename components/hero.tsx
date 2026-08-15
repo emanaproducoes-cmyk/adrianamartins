@@ -124,16 +124,30 @@ export function Hero() {
       </section>
 
       {/* Barra laranja logo abaixo do Hero */}
-      <div className="relative bg-novo-orange px-4 py-3 text-center">
-        <p className="text-xs font-bold uppercase tracking-[0.1em] text-white sm:text-sm sm:tracking-[0.15em] md:text-base">
+      <div className="relative bg-novo-orange px-4 py-5 text-center sm:py-6 md:py-7">
+        <p className="text-sm font-bold uppercase tracking-[0.1em] text-white sm:text-base sm:tracking-[0.15em] md:text-lg">
           Coragem para cuidar de Rondônia — conheça o plano de governo
         </p>
 
-        {/* Seta flutuante indicando rolagem */}
-        <ChevronDown
-          aria-hidden
-          className="animate-float mx-auto mt-1.5 size-5 text-white sm:size-6"
-        />
+        {/* Wrapper de posicionamento — fica parado, sem competir com a animação do botão */}
+        <div className="absolute bottom-0 left-1/2 z-20 -translate-x-1/2 translate-y-1/2">
+          <a
+            href="#propostas"
+            aria-label="Rolar para conhecer o plano de governo"
+            style={{
+              backgroundImage:
+                "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E\")",
+              backgroundBlendMode: 'overlay',
+              animation: 'bounce 1.5s infinite !important',
+            }}
+            className="animate-bounce will-change-transform flex size-11 items-center justify-center overflow-hidden rounded-full border border-white/40 bg-white/10 text-white shadow-lg shadow-black/30 backdrop-blur-md transition-colors duration-300 hover:border-white/70 hover:bg-white/20 sm:size-12"
+          >
+            <span className="flex flex-col items-center">
+              <ChevronDown aria-hidden className="size-4 sm:size-[18px]" />
+              <ChevronDown aria-hidden className="-mt-2.5 size-4 sm:size-[18px]" />
+            </span>
+          </a>
+        </div>
       </div>
     </>
   )
