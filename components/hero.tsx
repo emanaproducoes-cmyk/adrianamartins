@@ -45,6 +45,7 @@ export function Hero() {
                   style={{
                     WebkitTextStroke: '4px #ffffff',
                     paintOrder: 'stroke fill',
+                    textShadow: 'none',
                   }}
                 >
                   para Cuidar!
