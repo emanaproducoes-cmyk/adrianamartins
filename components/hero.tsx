@@ -9,7 +9,7 @@ export function Hero() {
     <>
       <section
         id="topo"
-        className="relative bg-novo-navy-deep pt-36 pb-10 sm:pt-40 md:pt-44 md:pb-14"
+        className="relative bg-novo-navy-deep pt-44 pb-10 sm:pt-52 md:pt-60 md:pb-14"
       >
         <div className="mx-auto max-w-7xl px-4 md:px-8">
           {/* Selo */}
