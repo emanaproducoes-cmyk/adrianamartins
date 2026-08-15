@@ -53,8 +53,10 @@ export function RondoniaProblemas() {
             <span className="text-sm font-bold uppercase tracking-[0.25em] text-novo-orange">
               O Diagnóstico
             </span>
-            <h2 className="mt-3 text-balance font-display text-2xl leading-none tracking-wide text-white md:text-3xl">
-              RONDÔNIA PRECISA SER FEDERAL
+            <h2 className="mt-3 text-balance font-display text-2xl leading-none tracking-wide text-white md:text-6xl">
+              Rondônia não precisa de discursos vindos de Brasília. Precisa de{' '}
+              <span className="text-novo-orange">representatividade FEDERAL</span> que traga
+              resultados para o nosso estado.
             </h2>
           </Reveal>
         </div>
