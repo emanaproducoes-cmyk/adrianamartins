@@ -129,16 +129,23 @@ export function Hero() {
           Coragem para cuidar de Rondônia — conheça o plano de governo
         </p>
 
-        {/* Botão autônomo, flutuando sobre a barra laranja, com seta balançando */}
+        {/* Botão autônomo, flutuando sobre a barra laranja, com efeito glassmorphism e setas balançando */}
         <a
           href="#propostas"
           aria-label="Rolar para conhecer o plano de governo"
-          className="group absolute bottom-0 left-1/2 z-20 flex size-9 -translate-x-1/2 translate-y-1/2 items-center justify-center rounded-full border border-white/60 bg-novo-orange text-white shadow-lg shadow-black/30 transition-all duration-300 hover:border-white hover:bg-novo-orange-dark hover:scale-110 sm:size-10"
+          className="group absolute bottom-0 left-1/2 z-20 flex size-11 -translate-x-1/2 translate-y-1/2 items-center justify-center rounded-full border border-white/40 bg-white/10 text-white shadow-lg shadow-black/30 backdrop-blur-md transition-all duration-300 hover:border-white/70 hover:bg-white/20 hover:scale-110 sm:size-12"
         >
-          <ChevronDown
-            aria-hidden
-            className="size-4 animate-bounce transition-transform duration-300 group-hover:translate-y-0.5 sm:size-5"
-          />
+          <span className="flex flex-col items-center">
+            <ChevronDown
+              aria-hidden
+              className="size-4 animate-bounce sm:size-[18px]"
+            />
+            <ChevronDown
+              aria-hidden
+              style={{ animationDelay: '150ms' }}
+              className="-mt-2.5 size-4 animate-bounce sm:size-[18px]"
+            />
+          </span>
         </a>
       </div>
     </>
