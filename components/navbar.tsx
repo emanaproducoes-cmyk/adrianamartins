@@ -26,7 +26,7 @@ export function Navbar() {
         {/* Marca — logo no lugar do texto */}
         <a
           href="#topo"
-          className="group/logo relative flex flex-col items-start gap-1.5 overflow-hidden"
+          className="group/logo relative flex flex-col items-center overflow-hidden"
           aria-label="Adriana Martins - início"
         >
           <Image
@@ -35,14 +35,14 @@ export function Navbar() {
             width={280}
             height={140}
             priority
-            className="h-14 w-auto object-contain transition-transform duration-300 group-hover/logo:scale-105 sm:h-16 md:h-20"
+            className="h-auto w-28 object-contain transition-transform duration-300 group-hover/logo:scale-105 sm:w-32 md:w-40"
           />
           <Image
             src="/images/novo-logo.png"
             alt="Partido NOVO"
-            width={140}
-            height={40}
-            className="h-6 w-auto object-contain sm:h-7 md:h-8"
+            width={280}
+            height={80}
+            className="h-auto w-28 object-contain sm:w-32 md:w-40"
           />
 
           {/* Efeito scanner na marca */}
