@@ -29,9 +29,9 @@ export const PROBLEMAS = [
     acao: 'Destinação de emendas impositivas para compra de maquinário pesado para prefeituras manterem o escoamento agrícola.',
   },
   {
-    titulo: 'Isolamento Logístico',
-    desc: 'Municípios do interior sem integração aérea e de transporte adequada.',
-    acao: 'Estímulo à aviação regional com subsídios e modernização de pequenos aeródromos estaduais.',
+    titulo: 'Isolamento Aéreo',
+    desc: 'Rondônia tem a segunda passagem aérea mais cara do Brasil.',
+    acao: 'Não basta ter o aeroporto; é necessário que as empresas cumpram metas de frequência e pontualidade, com sanções rigorosas para cancelamentos injustificados.',
   },
   {
     titulo: 'UBS Desassistidas',
