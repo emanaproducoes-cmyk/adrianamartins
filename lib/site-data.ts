@@ -14,36 +14,44 @@ export const NAV_LINKS = [
 
 export const PROBLEMAS = [
   {
-    titulo: 'Malha viária precária',
+    titulo: 'Malha Viária Precária',
     desc: 'Estradas esburacadas que travam o escoamento da produção rondoniense.',
+    acao: 'Cobrança rigorosa de repasses federais e fiscalização permanente das obras de pavimentação e recomposição asfáltica.',
   },
   {
-    titulo: 'BR-364 crítica',
+    titulo: 'BR-364 Crítica',
     desc: 'A principal via do estado com condições de manutenção perigosas.',
+    acao: 'Inclusão prioritária no orçamento federal de duplicação e manutenção contínua para evitar tragédias e garantir fluxo seguro.',
   },
   {
-    titulo: 'Vicinais abandonadas',
+    titulo: 'Vicinais Abandonadas',
     desc: 'Estradas rurais deterioradas isolam famílias e produtores.',
+    acao: 'Destinação de emendas impositivas para compra de maquinário pesado para prefeituras manterem o escoamento agrícola.',
   },
   {
-    titulo: 'Isolamento logístico',
-    desc: 'Municípios do interior sem integração aérea e de transporte.',
+    titulo: 'Isolamento Logístico',
+    desc: 'Municípios do interior sem integração aérea e de transporte adequada.',
+    acao: 'Estímulo à aviação regional com subsídios e modernização de pequenos aeródromos estaduais.',
   },
   {
-    titulo: 'UBS desassistidas',
+    titulo: 'UBS Desassistidas',
     desc: 'Postos de saúde sem médicos e sem insumos básicos.',
+    acao: 'Programa federal de fomento à saúde básica e garantia de medicamentos essenciais nos municípios.',
   },
   {
     titulo: 'Insegurança',
     desc: 'Ausência de delegacias estruturadas na área urbana e rural.',
+    acao: 'Instalação de delegacias especializadas e postos integrados de segurança em pontos estratégicos do estado.',
   },
   {
-    titulo: 'Excesso de burocracia',
+    titulo: 'Excesso de Burocracia',
     desc: 'Entraves que sufocam o pequeno produtor e o pequeno negócio.',
+    acao: 'Simplificação legislativa e desburocratização de licenças e cadastros para impulsionar a economia local.',
   },
   {
-    titulo: 'Evasão de talentos',
+    titulo: 'Evasão de Talentos',
     desc: 'Jovens deixam o estado por falta de oportunidades em tecnologia.',
+    acao: 'Criação de polos digitais e incentivos para permanência e capacitação tecnológica da juventude rondoniense.',
   },
 ]
 
