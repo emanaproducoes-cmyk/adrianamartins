@@ -35,14 +35,14 @@ export function Navbar() {
             width={280}
             height={140}
             priority
-            className="block h-auto w-24 object-contain transition-transform duration-300 group-hover/logo:scale-105 sm:w-32 md:w-40"
+            className="block h-auto w-40 object-contain transition-transform duration-300 group-hover/logo:scale-105 sm:w-48 md:w-60"
           />
           <Image
             src="/images/novo-logo.png"
             alt="Partido NOVO"
             width={280}
             height={80}
-            className="-mt-6 block h-auto w-24 object-contain sm:-mt-8 sm:w-32 md:-mt-10 md:w-40"
+            className="-mt-4 block h-auto w-40 object-contain sm:-mt-6 sm:w-48 md:-mt-8 md:w-60"
           />
 
           {/* Efeito scanner na marca */}
