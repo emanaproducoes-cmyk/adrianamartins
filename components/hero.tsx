@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import { useState } from 'react'
-import { ArrowRight, HeartHandshake, ShieldCheck } from 'lucide-react'
+import { ArrowRight, ChevronDown, HeartHandshake, ShieldCheck } from 'lucide-react'
 import { whatsappLink } from '@/lib/site-data'
 
 const sweepBase = {
@@ -124,10 +124,16 @@ export function Hero() {
       </section>
 
       {/* Barra laranja logo abaixo do Hero */}
-      <div className="bg-novo-orange px-4 py-3 text-center">
+      <div className="relative bg-novo-orange px-4 py-3 text-center">
         <p className="text-xs font-bold uppercase tracking-[0.1em] text-white sm:text-sm sm:tracking-[0.15em] md:text-base">
           Coragem para cuidar de Rondônia — conheça o plano de governo
         </p>
+
+        {/* Seta flutuante indicando rolagem */}
+        <ChevronDown
+          aria-hidden
+          className="animate-float mx-auto mt-1.5 size-5 text-white sm:size-6"
+        />
       </div>
     </>
   )
