@@ -26,23 +26,16 @@ export function Navbar() {
         {/* Marca — logo no lugar do texto */}
         <a
           href="#topo"
-          className="group/logo relative flex flex-col items-center overflow-hidden"
+          className="group/logo relative flex items-center overflow-hidden"
           aria-label="Adriana Martins - início"
         >
           <Image
-            src="/images/Logo_AM_.png"
-            alt="Adriana Martins 3030"
-            width={280}
-            height={140}
-            priority
-            className="block h-auto w-40 object-contain transition-transform duration-300 group-hover/logo:scale-105 sm:w-48 md:w-60"
-          />
-          <Image
             src="/images/novo-logo.png"
-            alt="Partido NOVO"
-            width={280}
-            height={80}
-            className="-mt-4 block h-auto w-40 object-contain sm:-mt-6 sm:w-48 md:-mt-8 md:w-60"
+            alt="Adriana Martins 3030 - Partido NOVO"
+            width={160}
+            height={44}
+            priority
+            className="block h-7 w-auto object-contain transition-transform duration-300 group-hover/logo:scale-105 sm:h-8 md:h-9"
           />
 
           {/* Efeito scanner na marca */}
