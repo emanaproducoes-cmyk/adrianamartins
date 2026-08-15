@@ -1,5 +1,4 @@
 'use client'
-import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import { Menu, X } from 'lucide-react'
 import { NAV_LINKS, whatsappLink } from '@/lib/site-data'
@@ -23,26 +22,20 @@ export function Navbar() {
       )}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 md:px-8">
-        {/* Marca — logo no lugar do texto */}
+        {/* Marca — botão "Novo" no lugar da logo, funciona como home */}
         <a
           href="#topo"
-          className="group/logo relative flex items-center overflow-hidden"
           aria-label="Adriana Martins - início"
+          className="group/logo relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-novo-orange px-5 py-2.5 text-sm font-bold uppercase tracking-wide text-white shadow-md transition-all duration-300 hover:scale-[1.04] hover:shadow-[0_0_10px_2px_rgba(251,188,15,0.55),0_0_28px_10px_rgba(236,103,28,0.55)]"
         >
-          <Image
-            src="/images/novo-logo.png"
-            alt="Adriana Martins 3030 - Partido NOVO"
-            width={160}
-            height={44}
-            priority
-            className="block h-11 w-[160px] object-contain transition-transform duration-300 group-hover/logo:scale-105"
-          />
-
-          {/* Efeito scanner na marca */}
           <span
             aria-hidden
-            className="pointer-events-none absolute inset-y-0 left-0 z-10 w-1/4 -translate-x-[200%] skew-x-12 bg-gradient-to-r from-transparent via-white/50 to-transparent transition-transform duration-700 ease-out group-hover/logo:translate-x-[500%]"
+            className="pointer-events-none absolute inset-y-0 left-0 z-0 w-1/4 -translate-x-[200%] skew-x-12 bg-gradient-to-r from-transparent via-white/40 to-transparent transition-transform duration-500 ease-out group-hover/logo:translate-x-[500%]"
           />
+          <span className="relative z-10">Novo</span>
+          <span aria-hidden className="relative z-10 text-base leading-none">
+            🇧🇷
+          </span>
         </a>
         {/* Links desktop */}
         <div className="hidden items-center gap-8 lg:flex">
