@@ -29,14 +29,8 @@ export function Hero() {
               className="object-cover object-center"
             />
 
-            {/* Camada de leitura — cor única (navy), sem blur */}
-            <div
-              aria-hidden
-              className="pointer-events-none absolute inset-0 bg-gradient-to-t from-novo-navy-deep via-novo-navy-deep/40 to-transparent"
-            />
-
             {/* Conteúdo — canto inferior direito do banner */}
-            <div className="absolute inset-x-0 bottom-0 z-10 px-4 pb-5 text-center sm:px-6 sm:pb-8 md:right-0 md:left-auto md:max-w-lg md:px-8 md:pb-10 md:text-right">
+            <div className="absolute inset-x-0 bottom-0 z-10 px-4 pb-5 text-center [text-shadow:0_2px_10px_rgba(0,0,0,0.55)] sm:px-6 sm:pb-8 md:right-0 md:left-auto md:max-w-lg md:px-8 md:pb-10 md:text-right">
               <h1 className="font-display text-4xl leading-[0.95] tracking-wide text-white sm:text-5xl md:text-6xl">
                 Coragem
                 <br />
