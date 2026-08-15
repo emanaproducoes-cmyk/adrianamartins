@@ -26,12 +26,12 @@ export function Navbar() {
         {/* Marca — logo no lugar do texto */}
         <a href="#topo" className="group flex items-center" aria-label="Adriana Martins - início">
           <Image
-            src="/images/logo-am.png"
+            src="/images/novo-logo.png"
             alt="Adriana Martins 3030"
             width={160}
             height={64}
             priority
-            className="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105 md:h-14"
+            className="h-9 w-auto object-contain transition-transform duration-300 group-hover:scale-105 sm:h-10 md:h-14"
           />
         </a>
         {/* Links desktop */}
