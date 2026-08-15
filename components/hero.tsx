@@ -26,7 +26,7 @@ export function Hero() {
               fill
               priority
               sizes="(max-width: 768px) 100vw, 1200px"
-              className="object-cover object-center"
+              className="object-cover object-[68%_center] sm:object-[60%_center] md:object-center"
             />
 
             {/* Efeito scanner — faixa de luz que varre o banner no hover (via transform, mais confiável) */}
