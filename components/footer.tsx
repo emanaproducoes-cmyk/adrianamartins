@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { MessageCircle } from 'lucide-react'
 import { NAV_LINKS, whatsappLink, WHATSAPP_DISPLAY } from '@/lib/site-data'
 
@@ -26,7 +27,14 @@ export function Footer() {
         <div className="grid gap-10 md:grid-cols-3">
           {/* Marca */}
           <div>
-            <p className="font-display text-4xl tracking-wide text-white">ADRIANA MARTINS</p>
+            <Image
+              src="/Logo_AM_.png"
+              alt="Adriana Martins"
+              width={220}
+              height={72}
+              className="h-auto w-44 md:w-52"
+              priority={false}
+            />
             <p className="mt-3 font-display text-2xl italic tracking-wide text-novo-orange">
               Coragem para Cuidar!
             </p>
@@ -66,7 +74,11 @@ export function Footer() {
             </a>
             <div className="mt-5 flex gap-3">
               {[
-                { icon: InstagramIcon, label: 'Instagram', href: 'https://instagram.com' },
+                {
+                  icon: InstagramIcon,
+                  label: 'Instagram',
+                  href: 'https://www.instagram.com/adrianamartinsoficial30/',
+                },
                 { icon: FacebookIcon, label: 'Facebook', href: 'https://facebook.com' },
                 {
                   icon: MessageCircle,
@@ -91,9 +103,8 @@ export function Footer() {
 
         <div className="mt-12 border-t border-white/10 pt-6">
           <p className="text-xs leading-relaxed text-white/45">
-            Conteúdo produzido pela pré-candidatura Adriana Martins — Porto Velho/RO. Propaganda
-            eleitoral autorizada. A produção deste material segue as diretrizes de identidade visual do
-            Partido NOVO (2023).
+            Propaganda eleitoral autorizada. CNPJ 68.353.217/0001-19. A produção deste material segue as
+            diretrizes de identidade visual do Partido NOVO (2023).
           </p>
           <p className="mt-3 text-xs text-white/45">
             &copy; {new Date().getFullYear()} Adriana Martins 3030 · Coragem para Cuidar! · Todos os
