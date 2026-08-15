@@ -1,10 +1,19 @@
 'use client'
 
 import Image from 'next/image'
+import { useState } from 'react'
 import { ArrowRight, HeartHandshake, ShieldCheck } from 'lucide-react'
 import { whatsappLink } from '@/lib/site-data'
 
+const sweepBase = {
+  transition: 'transform 700ms ease-out',
+} as const
+
 export function Hero() {
+  const [bannerHover, setBannerHover] = useState(false)
+  const [btn1Hover, setBtn1Hover] = useState(false)
+  const [btn2Hover, setBtn2Hover] = useState(false)
+
   return (
     <>
       <section
@@ -19,7 +28,11 @@ export function Hero() {
           </span>
 
           {/* Moldura do banner — tamanho contido, não ocupa a tela inteira */}
-          <div className="group/banner relative aspect-[4/5] overflow-hidden rounded-2xl border border-white/10 shadow-2xl shadow-black/40 ring-1 ring-white/5 sm:aspect-[16/10] md:aspect-[21/9]">
+          <div
+            onMouseEnter={() => setBannerHover(true)}
+            onMouseLeave={() => setBannerHover(false)}
+            className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-white/10 shadow-2xl shadow-black/40 ring-1 ring-white/5 sm:aspect-[16/10] md:aspect-[21/9]"
+          >
             <Image
               src="/images/hero-adriana.png"
               alt="Adriana Martins, candidata a Deputada Federal 3030, com a bandeira de Rondônia e o Congresso Nacional ao fundo"
@@ -29,10 +42,14 @@ export function Hero() {
               className="object-cover object-[68%_center] sm:object-[62%_center] md:object-[58%_center] lg:object-[55%_center]"
             />
 
-            {/* Efeito scanner — faixa de luz que varre o banner no hover (via transform, mais confiável) */}
+            {/* Efeito scanner — faixa de luz que varre o banner no hover (via estado do React, garantido de funcionar) */}
             <div
               aria-hidden
-              className="pointer-events-none absolute inset-y-0 left-0 z-[5] w-1/3 -translate-x-[150%] skew-x-12 bg-gradient-to-r from-transparent via-white/25 to-transparent transition-transform duration-700 ease-out group-hover/banner:translate-x-[350%]"
+              style={{
+                ...sweepBase,
+                transform: bannerHover ? 'translateX(350%) skewX(-12deg)' : 'translateX(-150%) skewX(-12deg)',
+              }}
+              className="pointer-events-none absolute inset-y-0 left-0 z-[5] w-1/3 bg-gradient-to-r from-transparent via-white/25 to-transparent"
             />
 
             {/* Conteúdo — canto inferior direito do banner */}
@@ -63,23 +80,40 @@ export function Hero() {
                   href={whatsappLink('Olá! Quero apoiar a campanha da Adriana Martins 3030.')}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group/btn1 relative inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-full bg-novo-orange px-6 py-3 text-sm font-bold uppercase tracking-wide text-white shadow-lg shadow-novo-orange/25 transition-all duration-300 hover:scale-[1.03] hover:bg-novo-orange-dark hover:shadow-xl hover:shadow-novo-orange/40 sm:w-auto md:px-7 md:py-4 md:text-base"
+                  onMouseEnter={() => setBtn1Hover(true)}
+                  onMouseLeave={() => setBtn1Hover(false)}
+                  className="relative inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-full bg-novo-orange px-6 py-3 text-sm font-bold uppercase tracking-wide text-white shadow-lg shadow-novo-orange/25 transition-all duration-300 hover:scale-[1.03] hover:bg-novo-orange-dark hover:shadow-xl hover:shadow-novo-orange/40 sm:w-auto md:px-7 md:py-4 md:text-base"
                 >
                   <span
                     aria-hidden
-                    className="pointer-events-none absolute inset-y-0 left-0 z-0 w-1/3 -translate-x-[150%] skew-x-12 bg-gradient-to-r from-transparent via-white/40 to-transparent transition-transform duration-500 ease-out group-hover/btn1:translate-x-[350%]"
+                    style={{
+                      ...sweepBase,
+                      transitionDuration: '500ms',
+                      transform: btn1Hover ? 'translateX(350%) skewX(-12deg)' : 'translateX(-150%) skewX(-12deg)',
+                    }}
+                    className="pointer-events-none absolute inset-y-0 left-0 z-0 w-1/3 bg-gradient-to-r from-transparent via-white/40 to-transparent"
                   />
                   <HeartHandshake className="relative z-10 size-4 md:size-5" />
                   <span className="relative z-10">Quero Apoiar</span>
-                  <ArrowRight className="relative z-10 size-4 transition-transform duration-300 group-hover/btn1:translate-x-1 md:size-5" />
+                  <ArrowRight
+                    className="relative z-10 size-4 transition-transform duration-300 md:size-5"
+                    style={{ transform: btn1Hover ? 'translateX(4px)' : 'translateX(0)' }}
+                  />
                 </a>
                 <a
                   href="#propostas"
-                  className="group/btn2 relative inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-full border border-white/30 px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition-all duration-300 hover:scale-[1.03] hover:border-novo-yellow hover:bg-white/5 hover:text-novo-yellow sm:w-auto md:px-7 md:py-4 md:text-base"
+                  onMouseEnter={() => setBtn2Hover(true)}
+                  onMouseLeave={() => setBtn2Hover(false)}
+                  className="relative inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-full border border-white/30 px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition-all duration-300 hover:scale-[1.03] hover:border-novo-yellow hover:bg-white/5 hover:text-novo-yellow sm:w-auto md:px-7 md:py-4 md:text-base"
                 >
                   <span
                     aria-hidden
-                    className="pointer-events-none absolute inset-y-0 left-0 z-0 w-1/3 -translate-x-[150%] skew-x-12 bg-gradient-to-r from-transparent via-white/25 to-transparent transition-transform duration-500 ease-out group-hover/btn2:translate-x-[350%]"
+                    style={{
+                      ...sweepBase,
+                      transitionDuration: '500ms',
+                      transform: btn2Hover ? 'translateX(350%) skewX(-12deg)' : 'translateX(-150%) skewX(-12deg)',
+                    }}
+                    className="pointer-events-none absolute inset-y-0 left-0 z-0 w-1/3 bg-gradient-to-r from-transparent via-white/25 to-transparent"
                   />
                   <span className="relative z-10">Conhecer o Plano</span>
                 </a>
