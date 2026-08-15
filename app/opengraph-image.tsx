@@ -1,11 +1,12 @@
 import { ImageResponse } from 'next/og'
 import { readFile } from 'node:fs/promises'
 import { join } from 'node:path'
+import sharp from 'sharp'
 
 export const alt =
   'Adriana Martins 3030 — Coragem para Cuidar! Candidata a Deputada Federal por Rondônia.'
 export const size = { width: 1200, height: 630 }
-export const contentType = 'image/png'
+export const contentType = 'image/jpeg'
 
 // Lida uma única vez, fora da função — a imagem não muda por request.
 const heroImageData = await readFile(
@@ -14,8 +15,8 @@ const heroImageData = await readFile(
 )
 const heroImageSrc = `data:image/png;base64,${heroImageData}`
 
-export default function OpengraphImage() {
-  return new ImageResponse(
+export default async function OpengraphImage() {
+  const png = new ImageResponse(
     (
       <div
         style={{
@@ -172,4 +173,16 @@ export default function OpengraphImage() {
     ),
     { ...size }
   )
+
+  // next/og só gera PNG. PNG com foto fica pesado — recomprime pra JPEG,
+  // que é muito mais leve pra esse tipo de conteúdo.
+  const pngBuffer = Buffer.from(await png.arrayBuffer())
+  const jpegBuffer = await sharp(pngBuffer).jpeg({ quality: 78 }).toBuffer()
+
+  return new Response(jpegBuffer, {
+    headers: {
+      'Content-Type': 'image/jpeg',
+      'Cache-Control': 'public, immutable, no-transform, max-age=31536000',
+    },
+  })
 }
