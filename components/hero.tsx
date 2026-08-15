@@ -1,58 +1,53 @@
 'use client'
 
 import Image from 'next/image'
-import { useEffect, useState } from 'react'
 import { ArrowRight, HeartHandshake, ShieldCheck } from 'lucide-react'
 import { whatsappLink } from '@/lib/site-data'
 
 export function Hero() {
-  const [offset, setOffset] = useState(0)
-
-  useEffect(() => {
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    if (prefersReduced) return
-    const onScroll = () => setOffset(window.scrollY * 0.15)
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
-
   return (
-    <section
-      id="topo"
-      className="relative overflow-hidden bg-novo-navy-deep pt-24 pb-16 md:pt-28 md:pb-20"
-    >
-      {/* Glow decorativo */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -right-32 top-10 size-[520px] rounded-full bg-novo-orange/20 blur-[120px]"
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -left-40 bottom-0 size-[420px] rounded-full bg-novo-green/15 blur-[120px]"
-      />
+    <>
+      <section
+        id="topo"
+        className="relative flex min-h-[92vh] items-end overflow-hidden bg-novo-navy-deep pt-24"
+      >
+        {/* Banner completo */}
+        <Image
+          src="/images/hero-banner.png"
+          alt="Adriana Martins, candidata a Deputada Federal 3030, com a bandeira de Rondônia e o Congresso Nacional ao fundo"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center"
+        />
 
-      <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-4 md:px-8 lg:grid-cols-[1.05fr_1fr]">
-        {/* Coluna texto */}
-        <div className="order-2 lg:order-1">
-          <span className="inline-flex items-center gap-2 rounded-full border border-novo-orange/40 bg-novo-orange/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-novo-yellow">
-            <ShieldCheck className="size-4" />
-            Candidata a Deputada Federal
-          </span>
+        {/* Camada de leitura — cor única (navy) unificando o fundo, sem blur */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 bg-gradient-to-t from-novo-navy-deep via-novo-navy-deep/35 to-novo-navy-deep/10"
+        />
 
-          <h1 className="mt-5 font-display text-6xl leading-[0.92] tracking-wide text-white sm:text-7xl md:text-8xl">
+        {/* Selo — topo esquerdo */}
+        <span className="absolute left-4 top-24 z-10 inline-flex items-center gap-2 rounded-full border border-novo-orange/40 bg-novo-navy-deep/60 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-novo-yellow backdrop-blur-sm md:left-8">
+          <ShieldCheck className="size-4" />
+          Candidata a Deputada Federal
+        </span>
+
+        {/* Conteúdo — canto inferior direito */}
+        <div className="relative z-10 ml-auto w-full max-w-xl px-4 pb-14 text-right md:px-8 md:pb-20">
+          <h1 className="font-display text-5xl leading-[0.92] tracking-wide text-white sm:text-6xl md:text-7xl">
             Coragem
             <br />
             <span className="text-novo-orange">para Cuidar!</span>
           </h1>
 
-          <p className="mt-5 max-w-xl text-pretty text-lg leading-relaxed text-white/80">
+          <p className="mt-4 ml-auto max-w-md text-pretty text-sm leading-relaxed text-white/85 md:text-base">
             Adriana Martins leva a Brasília uma visão{' '}
             <strong className="font-semibold text-white">técnica, jurídica e moderna</strong> para os
-            desafios de Rondônia — do desenvolvimento da logística e infraestrutura à proteção jurídica
-            e social da mulher e da família.
+            desafios de Rondônia.
           </p>
 
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-7 flex flex-col items-end gap-3 sm:flex-row sm:justify-end">
             <a
               href={whatsappLink('Olá! Quero apoiar a campanha da Adriana Martins 3030.')}
               target="_blank"
@@ -71,22 +66,14 @@ export function Hero() {
             </a>
           </div>
         </div>
+      </section>
 
-        {/* Coluna imagem — HERO HEADER (sem distorção) */}
-        <div className="order-1 lg:order-2" style={{ transform: `translateY(${offset}px)` }}>
-          <div className="group relative overflow-hidden rounded-2xl border border-white/10 shadow-2xl shadow-black/40 ring-1 ring-white/5">
-            <Image
-              src="/images/hero-adriana.png"
-              alt="Adriana Martins, candidata a Deputada Federal 3030, com a bandeira de Rondônia e o Congresso Nacional ao fundo"
-              width={1731}
-              height={920}
-              priority
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="h-auto w-full object-contain transition-transform duration-700 ease-out group-hover:scale-[1.03]"
-            />
-          </div>
-        </div>
+      {/* Barra laranja logo abaixo do Hero */}
+      <div className="bg-novo-orange py-3 text-center">
+        <p className="text-sm font-bold uppercase tracking-[0.15em] text-white sm:text-base">
+          Coragem para cuidar de Rondônia — conheça o plano de governo
+        </p>
       </div>
-    </section>
+    </>
   )
 }
