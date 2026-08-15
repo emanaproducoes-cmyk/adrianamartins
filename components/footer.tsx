@@ -28,11 +28,11 @@ export function Footer() {
           {/* Marca */}
           <div>
             <Image
-              src="/Logo_AM_.png"
-              alt="Adriana Martins"
-              width={220}
-              height={72}
-              className="h-auto w-44 md:w-52"
+              src="/images/Logo_AM_.png"
+              alt="Adriana Martins 3030"
+              width={600}
+              height={650}
+              className="h-auto w-36 md:w-40"
               priority={false}
             />
             <p className="mt-3 font-display text-2xl italic tracking-wide text-novo-orange">
