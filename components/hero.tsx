@@ -139,7 +139,7 @@ export function Hero() {
                 "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E\")",
               backgroundBlendMode: 'overlay',
             }}
-            className="animate-bounce flex size-11 items-center justify-center overflow-hidden rounded-full border border-white/40 bg-white/10 text-white shadow-lg shadow-black/30 backdrop-blur-md transition-colors duration-300 hover:border-white/70 hover:bg-white/20 sm:size-12"
+            className="animate-bounce will-change-transform flex size-11 items-center justify-center overflow-hidden rounded-full border border-white/40 bg-white/10 text-white shadow-lg shadow-black/30 backdrop-blur-md transition-colors duration-300 hover:border-white/70 hover:bg-white/20 sm:size-12"
           >
             <span className="flex flex-col items-center">
               <ChevronDown aria-hidden className="size-4 sm:size-[18px]" />
