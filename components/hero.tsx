@@ -129,11 +129,11 @@ export function Hero() {
           Coragem para cuidar de Rondônia — conheça o plano de governo
         </p>
 
-        {/* Ghost button com seta balançando, indicando rolagem */}
+        {/* Botão autônomo, flutuando sobre a barra laranja, com seta balançando */}
         <a
           href="#propostas"
           aria-label="Rolar para conhecer o plano de governo"
-          className="group relative mx-auto mt-2.5 flex size-9 items-center justify-center rounded-full border border-white/40 bg-transparent text-white transition-all duration-300 hover:border-white hover:bg-white/10 sm:mt-3 sm:size-10"
+          className="group absolute bottom-0 left-1/2 z-20 flex size-9 -translate-x-1/2 translate-y-1/2 items-center justify-center rounded-full border border-white/60 bg-novo-orange text-white shadow-lg shadow-black/30 transition-all duration-300 hover:border-white hover:bg-novo-orange-dark hover:scale-110 sm:size-10"
         >
           <ChevronDown
             aria-hidden
