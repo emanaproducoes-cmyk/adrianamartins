@@ -1,21 +1,18 @@
 'use client'
-
+import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import { Menu, X } from 'lucide-react'
 import { NAV_LINKS, whatsappLink } from '@/lib/site-data'
 import { cn } from '@/lib/utils'
-
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
-
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
     onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
-
   return (
     <header
       className={cn(
@@ -26,13 +23,17 @@ export function Navbar() {
       )}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 md:px-8">
-        {/* Marca */}
+        {/* Marca — logo no lugar do texto */}
         <a href="#topo" className="group flex items-center" aria-label="Adriana Martins - início">
-          <span className="font-display text-2xl leading-none tracking-wide text-white transition-colors duration-300 group-hover:text-novo-yellow">
-            ADRIANA MARTINS
-          </span>
+          <Image
+            src="/images/logo-am.png"
+            alt="Adriana Martins 3030"
+            width={160}
+            height={64}
+            priority
+            className="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105 md:h-14"
+          />
         </a>
-
         {/* Links desktop */}
         <div className="hidden items-center gap-8 lg:flex">
           {NAV_LINKS.map((link) => (
@@ -53,7 +54,6 @@ export function Navbar() {
             Quero Apoiar
           </a>
         </div>
-
         {/* Botão mobile */}
         <button
           type="button"
@@ -65,7 +65,6 @@ export function Navbar() {
           {open ? <X className="size-6" /> : <Menu className="size-6" />}
         </button>
       </nav>
-
       {/* Menu mobile */}
       <div
         className={cn(
