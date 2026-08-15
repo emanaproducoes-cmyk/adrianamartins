@@ -129,7 +129,7 @@ export function Hero() {
           Coragem para cuidar de Rondônia — conheça o plano de governo
         </p>
 
-        {/* Botão autônomo, flutuando sobre a barra laranja, com efeito glassmorphism e setas balançando */}
+        {/* Botão autônomo, flutuando sobre a barra laranja, com setas balançando */}
         <a
           href="#propostas"
           aria-label="Rolar para conhecer o plano de governo"
