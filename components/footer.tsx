@@ -35,7 +35,7 @@ export function Footer() {
               className="h-auto w-36 md:w-40"
               priority={false}
             />
-            <p className="mt-3 font-display text-2xl italic tracking-wide text-novo-orange">
+            <p className="mt-1 font-display text-2xl italic tracking-wide text-novo-orange">
               Coragem para Cuidar!
             </p>
             <p className="mt-2 max-w-xs text-sm leading-relaxed text-white/60">
