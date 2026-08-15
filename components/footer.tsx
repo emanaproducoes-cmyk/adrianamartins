@@ -28,7 +28,7 @@ export function Footer() {
           {/* Marca */}
           <div>
             <Image
-              src="/images/Logo_AM_.png"
+              src="/images/Logo_AM_Stroke_6px.png"
               alt="Adriana Martins 3030"
               width={600}
               height={650}
