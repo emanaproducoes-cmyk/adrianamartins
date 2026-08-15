@@ -35,7 +35,7 @@ export function Navbar() {
             width={160}
             height={44}
             priority
-            className="block h-10 w-auto object-contain transition-transform duration-300 group-hover/logo:scale-105"
+            className="block h-14 w-auto object-contain transition-transform duration-300 group-hover/logo:scale-105"
           />
 
           {/* Efeito scanner na marca */}
