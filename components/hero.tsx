@@ -19,7 +19,7 @@ export function Hero() {
           </span>
 
           {/* Moldura do banner — tamanho contido, não ocupa a tela inteira */}
-          <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-white/10 shadow-2xl shadow-black/40 ring-1 ring-white/5 sm:aspect-[16/10] md:aspect-[21/9]">
+          <div className="group/banner relative aspect-[4/5] overflow-hidden rounded-2xl border border-white/10 shadow-2xl shadow-black/40 ring-1 ring-white/5 sm:aspect-[16/10] md:aspect-[21/9]">
             <Image
               src="/images/hero-adriana.png"
               alt="Adriana Martins, candidata a Deputada Federal 3030, com a bandeira de Rondônia e o Congresso Nacional ao fundo"
@@ -27,6 +27,12 @@ export function Hero() {
               priority
               sizes="(max-width: 768px) 100vw, 1200px"
               className="object-cover object-center"
+            />
+
+            {/* Efeito scanner — faixa de luz que varre o banner no hover */}
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-y-0 -left-1/2 z-[5] w-1/3 -skew-x-12 bg-gradient-to-r from-transparent via-white/25 to-transparent opacity-0 transition-all duration-700 ease-out group-hover/banner:left-full group-hover/banner:opacity-100"
             />
 
             {/* Conteúdo — canto inferior direito do banner */}
@@ -48,17 +54,25 @@ export function Hero() {
                   href={whatsappLink('Olá! Quero apoiar a campanha da Adriana Martins 3030.')}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-novo-orange px-6 py-3 text-sm font-bold uppercase tracking-wide text-white shadow-lg shadow-novo-orange/25 transition-all duration-300 hover:scale-[1.03] hover:bg-novo-orange-dark hover:shadow-xl hover:shadow-novo-orange/40 sm:w-auto md:px-7 md:py-4 md:text-base"
+                  className="group/btn1 relative inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-full bg-novo-orange px-6 py-3 text-sm font-bold uppercase tracking-wide text-white shadow-lg shadow-novo-orange/25 transition-all duration-300 hover:scale-[1.03] hover:bg-novo-orange-dark hover:shadow-xl hover:shadow-novo-orange/40 sm:w-auto md:px-7 md:py-4 md:text-base"
                 >
-                  <HeartHandshake className="size-4 md:size-5" />
-                  Quero Apoiar
-                  <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1 md:size-5" />
+                  <span
+                    aria-hidden
+                    className="pointer-events-none absolute inset-y-0 -left-1/2 z-0 w-1/3 -skew-x-12 bg-gradient-to-r from-transparent via-white/40 to-transparent opacity-0 transition-all duration-500 ease-out group-hover/btn1:left-full group-hover/btn1:opacity-100"
+                  />
+                  <HeartHandshake className="relative z-10 size-4 md:size-5" />
+                  <span className="relative z-10">Quero Apoiar</span>
+                  <ArrowRight className="relative z-10 size-4 transition-transform duration-300 group-hover/btn1:translate-x-1 md:size-5" />
                 </a>
                 <a
                   href="#propostas"
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/30 px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition-all duration-300 hover:scale-[1.03] hover:border-novo-yellow hover:bg-white/5 hover:text-novo-yellow sm:w-auto md:px-7 md:py-4 md:text-base"
+                  className="group/btn2 relative inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-full border border-white/30 px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition-all duration-300 hover:scale-[1.03] hover:border-novo-yellow hover:bg-white/5 hover:text-novo-yellow sm:w-auto md:px-7 md:py-4 md:text-base"
                 >
-                  Conhecer o Plano
+                  <span
+                    aria-hidden
+                    className="pointer-events-none absolute inset-y-0 -left-1/2 z-0 w-1/3 -skew-x-12 bg-gradient-to-r from-transparent via-white/25 to-transparent opacity-0 transition-all duration-500 ease-out group-hover/btn2:left-full group-hover/btn2:opacity-100"
+                  />
+                  <span className="relative z-10">Conhecer o Plano</span>
                 </a>
               </div>
             </div>
