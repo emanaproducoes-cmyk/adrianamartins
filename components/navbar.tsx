@@ -1,4 +1,5 @@
 'use client'
+import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import { Menu, X } from 'lucide-react'
 import { NAV_LINKS, whatsappLink } from '@/lib/site-data'
@@ -32,10 +33,14 @@ export function Navbar() {
             aria-hidden
             className="pointer-events-none absolute inset-y-0 left-0 z-0 w-1/4 -translate-x-[200%] skew-x-12 bg-gradient-to-r from-transparent via-white/40 to-transparent transition-transform duration-500 ease-out group-hover/logo:translate-x-[500%]"
           />
-          <span className="relative z-10">Novo</span>
-          <span aria-hidden className="relative z-10 text-base leading-none">
-            🇧🇷
-          </span>
+          <Image
+            src="/images/home_button.png"
+            alt="Adriana Martins 3030 - Partido NOVO"
+            width={140}
+            height={40}
+            priority
+            className="relative z-10 h-6 w-auto object-contain"
+          />
         </a>
         {/* Links desktop */}
         <div className="hidden items-center gap-8 lg:flex">
