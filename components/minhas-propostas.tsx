@@ -343,7 +343,7 @@ export function MinhasPropostas() {
               alt="Adriana Martins 3030 - Partido NOVO"
               width={320}
               height={64}
-              className="mx-auto mt-8 h-10 w-auto object-contain md:h-40"
+              className="mx-auto mt-8 h-10 w-auto object-contain md:h-30"
             />
             <p className="mt-1 font-display text-3xl italic tracking-wide text-novo-orange">
               Coragem para Cuidar!
