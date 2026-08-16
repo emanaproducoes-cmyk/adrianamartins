@@ -5,6 +5,10 @@ import { useState } from 'react'
 import { ArrowRight, ChevronDown, HeartHandshake, ShieldCheck } from 'lucide-react'
 import { whatsappLink } from '@/lib/site-data'
 
+const sweepBase = {
+  transition: 'transform 700ms ease-out',
+} as const
+
 export function Hero() {
   const [bannerHover, setBannerHover] = useState(false)
   const [btn1Hover, setBtn1Hover] = useState(false)
@@ -12,17 +16,6 @@ export function Hero() {
 
   return (
     <>
-      {/* CSS próprio do componente — não depende do Tailwind reconhecer nada, garante que a animação exista sempre */}
-      <style>{`
-        @keyframes heroArrowBounce {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(8px); }
-        }
-        .hero-arrow-bounce {
-          animation: heroArrowBounce 1.4s ease-in-out infinite;
-        }
-      `}</style>
-
       <section
         id="topo"
         className="relative bg-novo-navy-deep pt-24 pb-10 md:pt-28 md:pb-14"
@@ -38,9 +31,6 @@ export function Hero() {
           <div
             onMouseEnter={() => setBannerHover(true)}
             onMouseLeave={() => setBannerHover(false)}
-            onMouseMove={() => setBannerHover(true)}
-            onTouchStart={() => setBannerHover(true)}
-            onTouchEnd={() => setBannerHover(false)}
             className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-white/10 shadow-2xl shadow-black/40 ring-1 ring-white/5 sm:aspect-[16/10] md:aspect-[21/9]"
           >
             <Image
@@ -52,24 +42,14 @@ export function Hero() {
               className="object-cover object-[68%_center] sm:object-[62%_center] md:object-[58%_center] lg:object-[55%_center]"
             />
 
-            {/* Efeito scanner — 100% controlado por JavaScript, sem depender de classes CSS arbitrárias */}
+            {/* Efeito scanner — faixa de luz que varre o banner no hover (via estado do React, garantido de funcionar) */}
             <div
               aria-hidden
               style={{
-                position: 'absolute',
-                top: 0,
-                bottom: 0,
-                left: 0,
-                width: '33%',
-                zIndex: 5,
-                pointerEvents: 'none',
-                transform: bannerHover
-                  ? 'translateX(350%) skewX(-12deg)'
-                  : 'translateX(-150%) skewX(-12deg)',
-                transition: 'transform 700ms ease-out',
-                background:
-                  'linear-gradient(to right, transparent, rgba(255,255,255,0.25), transparent)',
+                ...sweepBase,
+                transform: bannerHover ? 'translateX(350%) skewX(-12deg)' : 'translateX(-150%) skewX(-12deg)',
               }}
+              className="pointer-events-none absolute inset-y-0 left-0 z-[5] w-1/3 bg-gradient-to-r from-transparent via-white/25 to-transparent"
             />
 
             {/* Conteúdo — canto inferior direito do banner */}
@@ -102,65 +82,38 @@ export function Hero() {
                   rel="noopener noreferrer"
                   onMouseEnter={() => setBtn1Hover(true)}
                   onMouseLeave={() => setBtn1Hover(false)}
-                  onMouseMove={() => setBtn1Hover(true)}
-                  onTouchStart={() => setBtn1Hover(true)}
-                  onTouchEnd={() => setBtn1Hover(false)}
                   className="relative inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-full bg-novo-orange px-6 py-3 text-sm font-bold uppercase tracking-wide text-white shadow-lg shadow-novo-orange/25 transition-all duration-300 hover:scale-[1.03] hover:bg-novo-orange-dark hover:shadow-xl hover:shadow-novo-orange/40 sm:w-auto md:px-7 md:py-4 md:text-base"
                 >
                   <span
                     aria-hidden
                     style={{
-                      position: 'absolute',
-                      top: 0,
-                      bottom: 0,
-                      left: 0,
-                      width: '33%',
-                      zIndex: 0,
-                      pointerEvents: 'none',
-                      transform: btn1Hover
-                        ? 'translateX(350%) skewX(-12deg)'
-                        : 'translateX(-150%) skewX(-12deg)',
-                      transition: 'transform 500ms ease-out',
-                      background:
-                        'linear-gradient(to right, transparent, rgba(255,255,255,0.4), transparent)',
+                      ...sweepBase,
+                      transitionDuration: '500ms',
+                      transform: btn1Hover ? 'translateX(350%) skewX(-12deg)' : 'translateX(-150%) skewX(-12deg)',
                     }}
+                    className="pointer-events-none absolute inset-y-0 left-0 z-0 w-1/3 bg-gradient-to-r from-transparent via-white/40 to-transparent"
                   />
                   <HeartHandshake className="relative z-10 size-4 md:size-5" />
                   <span className="relative z-10">Quero Apoiar</span>
                   <ArrowRight
-                    className="relative z-10 size-4 md:size-5"
-                    style={{
-                      transform: btn1Hover ? 'translateX(4px)' : 'translateX(0)',
-                      transition: 'transform 300ms ease-out',
-                    }}
+                    className="relative z-10 size-4 transition-transform duration-300 md:size-5"
+                    style={{ transform: btn1Hover ? 'translateX(4px)' : 'translateX(0)' }}
                   />
                 </a>
                 <a
                   href="#propostas"
                   onMouseEnter={() => setBtn2Hover(true)}
                   onMouseLeave={() => setBtn2Hover(false)}
-                  onMouseMove={() => setBtn2Hover(true)}
-                  onTouchStart={() => setBtn2Hover(true)}
-                  onTouchEnd={() => setBtn2Hover(false)}
                   className="relative inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-full border border-white/30 px-6 py-3 text-sm font-bold uppercase tracking-wide text-white transition-all duration-300 hover:scale-[1.03] hover:border-novo-yellow hover:bg-white/5 hover:text-novo-yellow sm:w-auto md:px-7 md:py-4 md:text-base"
                 >
                   <span
                     aria-hidden
                     style={{
-                      position: 'absolute',
-                      top: 0,
-                      bottom: 0,
-                      left: 0,
-                      width: '33%',
-                      zIndex: 0,
-                      pointerEvents: 'none',
-                      transform: btn2Hover
-                        ? 'translateX(350%) skewX(-12deg)'
-                        : 'translateX(-150%) skewX(-12deg)',
-                      transition: 'transform 500ms ease-out',
-                      background:
-                        'linear-gradient(to right, transparent, rgba(255,255,255,0.25), transparent)',
+                      ...sweepBase,
+                      transitionDuration: '500ms',
+                      transform: btn2Hover ? 'translateX(350%) skewX(-12deg)' : 'translateX(-150%) skewX(-12deg)',
                     }}
+                    className="pointer-events-none absolute inset-y-0 left-0 z-0 w-1/3 bg-gradient-to-r from-transparent via-white/25 to-transparent"
                   />
                   <span className="relative z-10">Conhecer o Plano</span>
                 </a>
@@ -181,7 +134,13 @@ export function Hero() {
           <a
             href="#propostas"
             aria-label="Rolar para conhecer o plano de governo"
-            className="hero-arrow-bounce flex size-11 items-center justify-center overflow-hidden rounded-full border border-white/40 bg-white/10 text-white shadow-lg shadow-black/30 backdrop-blur-md transition-colors duration-300 hover:border-white/70 hover:bg-white/20 sm:size-12"
+            style={{
+              backgroundImage:
+                "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E\")",
+              backgroundBlendMode: 'overlay',
+              animation: 'bounce 1.5s infinite !important',
+            }}
+            className="animate-bounce will-change-transform flex size-11 items-center justify-center overflow-hidden rounded-full border border-white/40 bg-white/10 text-white shadow-lg shadow-black/30 backdrop-blur-md transition-colors duration-300 hover:border-white/70 hover:bg-white/20 sm:size-12"
           >
             <span className="flex flex-col items-center">
               <ChevronDown aria-hidden className="size-4 sm:size-[18px]" />
