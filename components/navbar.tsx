@@ -35,7 +35,7 @@ export function Navbar() {
             width={320}
             height={64}
             priority
-            className="h-8 w-auto object-contain transition-transform duration-300 group-hover/logo:scale-105 sm:h-9 md:h-10"
+            className="h-8 w-auto object-contain transition-transform duration-300 group-hover/logo:scale-105 sm:h-9 md:h-16"
           />
           <span
             aria-hidden
