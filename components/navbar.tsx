@@ -23,24 +23,23 @@ export function Navbar() {
       )}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 md:px-8">
-        {/* Marca — botão "Novo" no lugar da logo, funciona como home */}
+        {/* Marca — logo horizontal, funciona como home */}
         <a
           href="#topo"
           aria-label="Adriana Martins - início"
-          className="group/logo relative inline-flex items-center justify-center overflow-hidden rounded-full px-5 py-2.5 shadow-md transition-all duration-300 hover:scale-[1.04] hover:shadow-[0_0_10px_2px_rgba(251,188,15,0.55),0_0_28px_10px_rgba(236,103,28,0.55)]"
-          style={{ backgroundColor: '#E36831' }}
+          className="group/logo relative inline-flex items-center overflow-hidden"
         >
+          <Image
+            src="/images/LOGO_HORIZONTAL.png"
+            alt="Adriana Martins 3030 - Partido NOVO"
+            width={320}
+            height={64}
+            priority
+            className="h-8 w-auto object-contain transition-transform duration-300 group-hover/logo:scale-105 sm:h-9 md:h-10"
+          />
           <span
             aria-hidden
-            className="pointer-events-none absolute inset-y-0 left-0 z-0 w-1/4 -translate-x-[200%] skew-x-12 bg-gradient-to-r from-transparent via-white/40 to-transparent transition-transform duration-500 ease-out group-hover/logo:translate-x-[500%]"
-          />
-          <Image
-            src="/images/home_button.png"
-            alt="Adriana Martins 3030 - Partido NOVO"
-            width={140}
-            height={40}
-            priority
-            className="relative z-10 h-6 w-auto object-contain"
+            className="pointer-events-none absolute inset-y-0 left-0 z-10 w-1/4 -translate-x-[200%] skew-x-12 bg-gradient-to-r from-transparent via-white/50 to-transparent transition-transform duration-700 ease-out group-hover/logo:translate-x-[500%]"
           />
         </a>
         {/* Links desktop */}
