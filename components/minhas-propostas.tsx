@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import {
   Truck,
   PlaneTakeoff,
@@ -337,7 +338,14 @@ export function MinhasPropostas() {
           </Reveal>
 
           <Reveal delay={120}>
-            <p className="mt-8 font-display text-3xl italic tracking-wide text-novo-orange">
+            <Image
+              src="/images/LOGO_HORIZONTAL.png"
+              alt="Adriana Martins 3030 - Partido NOVO"
+              width={320}
+              height={64}
+              className="mx-auto mt-8 h-10 w-auto object-contain md:h-12"
+            />
+            <p className="mt-4 font-display text-3xl italic tracking-wide text-novo-orange">
               Coragem para Cuidar!
             </p>
           </Reveal>
