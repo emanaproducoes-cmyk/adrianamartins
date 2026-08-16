@@ -345,7 +345,7 @@ export function MinhasPropostas() {
               height={64}
               className="mx-auto mt-8 h-10 w-auto object-contain md:h-40"
             />
-            <p className="mt-2 font-display text-3xl italic tracking-wide text-novo-orange">
+            <p className="mt-1 font-display text-3xl italic tracking-wide text-novo-orange">
               Coragem para Cuidar!
             </p>
           </Reveal>
