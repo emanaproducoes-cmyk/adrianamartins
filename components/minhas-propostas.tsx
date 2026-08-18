@@ -2,15 +2,13 @@
 
 import Image from 'next/image'
 import {
-  Truck,
-  PlaneTakeoff,
-  ShieldAlert,
-  Sprout,
-  TriangleAlert,
-  Lightbulb,
-  Scale,
+  Route,
+  TrendingUp,
+  CircleDollarSign,
+  Users,
   Home,
   HeartHandshake,
+  Sprout,
   Wheat,
   ArrowDown,
 } from 'lucide-react'
@@ -59,81 +57,56 @@ const EIXOS = [
   {
     numero: '01',
     cor: 'orange' as Cor,
-    categoria: 'Infraestrutura',
-    icon: Truck,
-    tema: 'BR-364 & Logística',
-    nomeCompleto: 'BR-364 & Logística Integrada',
-    resumo: 'Gargalos, filas de balsa, acidentes e frete caro. Sensação de revolta no setor produtivo.',
-    hashtag: '#DuplicaBR364',
+    categoria: 'Logística',
+    icon: Route,
+    tema: 'Custo Rondônia',
+    nomeCompleto: 'Custo Rondônia — Logística & Mobilidade',
+    resumo: 'Frete caro, filas de balsa e voos cancelados. Isolamento terrestre e aéreo sufoca o estado.',
+    hashtag: '#CustoRondônia',
     diagnostico: {
       titulo: 'Diagnóstico & Indignação Local',
-      icon: TriangleAlert,
+      icon: TrendingUp,
       texto:
-        'A BR-364 é a espinha dorsal da economia de Rondônia, unindo todos os produtores do estado ao porto de Porto Velho e ao centro do país. Contudo, as falhas crônicas de manutenção e atrasos de obras elevam drasticamente o frete.',
+        'A BR-364 e os voos comerciais são as duas veias que ligam Rondônia ao Brasil. Frete elevado, balsas lentas e passagens caríssimas encarecem tudo: do alimento na mesa ao acesso a Brasília e ao tratamento médico fora do estado.',
       destaqueLabel: 'Impacto direto',
-      destaqueTexto: 'R$ 1,8 milhão de rondonienses afetados diariamente pelo frete inflacionado nos alimentos.',
+      destaqueTexto: 'R$ 1,8 milhão de rondonienses pagam diariamente o preço do isolamento em frete e passagem.',
     },
     solucao: {
       titulo: 'Solução Proposta & Posição Política',
-      icon: Lightbulb,
+      icon: CircleDollarSign,
       texto:
-        'Exigência de pacto federal para concessão transparente com duplicação preventiva, criação do Fórum Parlamentar de Logística e fiscalização contínua das balanças e trechos críticos.',
-      slogan: '#DuplicaBR364 · O Pedágio Invisível no seu Bolso.',
+        'Pacto federal para duplicação preventiva da BR-364, pressão sobre a ANAC por rotas aéreas acessíveis e fiscalização contínua das balanças, balsas e trechos críticos.',
+      slogan: '#CustoRondônia · O Pedágio Invisível no seu Bolso.',
     },
   },
   {
     numero: '02',
     cor: 'cyan' as Cor,
-    categoria: 'Mobilidade',
-    icon: PlaneTakeoff,
-    tema: 'Isolamento Aéreo',
-    nomeCompleto: 'Mobilidade & Conectividade Aérea',
-    resumo: 'Cancelamento massivo de voos e tarifas abusivas. Sentimento coletivo de abandono em PVH.',
-    hashtag: '#RondôniaSemVoos',
+    categoria: 'Acolhimento',
+    icon: Users,
+    tema: 'Proteção à Família',
+    nomeCompleto: 'Proteção & Acolhimento à Família',
+    resumo: 'Altos índices de violência doméstica e falta de delegacias 24h. Resposta emocional forte.',
+    hashtag: '#NenhumaFamíliaSó',
     diagnostico: {
-      titulo: 'Gargalo do Isolamento Aéreo',
-      icon: PlaneTakeoff,
+      titulo: 'Urgência Social e Realidade',
+      icon: Home,
       texto:
-        'Rondônia vive um sufocamento de voos comerciais. A redução vertiginosa de frequências em Porto Velho isolou empresários, pacientes que buscam tratamento fora e o turismo regional, encarecendo as passagens a níveis proibitivos.',
-      destaqueLabel: 'Sentimento',
-      destaqueTexto: 'Sensação coletiva de abandono e entrave ao desenvolvimento econômico do estado.',
+        'Rondônia figura entre os maiores índices de violência doméstica do país. No interior, a falta de Delegacias 24h e de rede de apoio deixa mulheres, crianças e idosos desamparados no pior momento.',
+      destaqueLabel: 'Realidade',
+      destaqueTexto: 'Falta de suporte contínuo e acolhimento ágil para famílias vulneráveis.',
     },
     solucao: {
-      titulo: 'Ação Parlamentar Proposta',
-      icon: Scale,
+      titulo: 'Rede "Nenhuma Família Só"',
+      icon: HeartHandshake,
       texto:
-        'Pressão sobre a ANAC, incentivos fiscais para querosene de aviação condicionados à permanência de rotas e criação de comissão especial de defesa do consumidor rondoniense.',
-      slogan: '#RondôniaSemVoos · Conectar Rondônia com o Brasil.',
+        'Casas de acolhimento regionalizadas para toda a família, linha direta de emergência via WhatsApp e fiscalização rigorosa dos recursos de segurança e assistência social do estado.',
+      slogan: '#NenhumaFamíliaSó · Proteção 24h e Resposta Rápida.',
     },
   },
   {
     numero: '03',
     cor: 'orange' as Cor,
-    categoria: 'Acolhimento',
-    icon: ShieldAlert,
-    tema: 'Proteção à Mulher',
-    nomeCompleto: 'Proteção & Acolhimento à Mulher',
-    resumo: 'Altos índices de violência e falta de delegacias 24h. Fortíssima resposta emocional no Zap.',
-    hashtag: '#NenhumaMulherSó',
-    diagnostico: {
-      titulo: 'Urgência Social e Realidade',
-      icon: Home,
-      texto:
-        'Rondônia figura infelizmente entre os maiores índices de violência contra a mulher do país. No interior, a falta de Delegacias da Mulher com atendimento 24h deixa vítimas desamparadas no momento mais crítico.',
-      destaqueLabel: 'Realidade',
-      destaqueTexto: 'Falta de suporte contínuo e acolhimento ágil para famílias vulneráveis.',
-    },
-    solucao: {
-      titulo: 'Rede "Nenhuma Mulher Só"',
-      icon: HeartHandshake,
-      texto:
-        'Destinação de emendas para casas de acolhimento regionalizadas, suporte digital via linha direta de emergência e fiscalização rigorosa dos recursos estaduais e federais de segurança pública.',
-      slogan: '#NenhumaMulherSó · Proteção 24h e Resposta Rápida.',
-    },
-  },
-  {
-    numero: '04',
-    cor: 'cyan' as Cor,
     categoria: 'Economia',
     icon: Sprout,
     tema: 'Liberdade & Agro',
@@ -332,7 +305,7 @@ export function MinhasPropostas() {
               Minhas propostas para Rondônia
             </h2>
             <p className="mt-5 text-pretty text-lg leading-relaxed text-muted-foreground">
-              Do essencial ao futuro: um plano concreto em quatro eixos, porque quanto mais concreto o
+              Do essencial ao futuro: um plano concreto em três eixos, porque quanto mais concreto o
               problema, mais concreta é a solução.
             </p>
           </Reveal>
@@ -352,7 +325,7 @@ export function MinhasPropostas() {
         </div>
 
         {/* Cards-resumo — clicáveis, rolam até o diagnóstico correspondente */}
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {EIXOS.map((e, i) => (
             <Reveal key={e.numero} delay={i * 100} className="h-full">
               <ResumoCard eixo={e} />
@@ -360,7 +333,7 @@ export function MinhasPropostas() {
           ))}
         </div>
 
-        {/* Diagnóstico aprofundado dos 4 eixos, todos visíveis, empilhados */}
+        {/* Diagnóstico aprofundado dos 3 eixos, todos visíveis, empilhados */}
         <div className="mt-10 flex flex-col gap-8">
           {EIXOS.map((e) => (
             <EixoDetalhado key={e.numero} eixo={e} />
@@ -372,13 +345,13 @@ export function MinhasPropostas() {
           <div className="mt-16 grid gap-6 rounded-3xl bg-novo-navy p-8 text-center sm:grid-cols-3 md:p-12">
             <div>
               <p className="font-display text-6xl tracking-wide text-novo-yellow">
-                <CountUp end={4} />
+                <CountUp end={3} />
               </p>
               <p className="mt-1 text-sm uppercase tracking-wide text-white/70">Eixos Temáticos</p>
             </div>
             <div>
               <p className="font-display text-6xl tracking-wide text-novo-yellow">
-                <CountUp end={4} />
+                <CountUp end={3} />
               </p>
               <p className="mt-1 text-sm uppercase tracking-wide text-white/70">Ações Parlamentares</p>
             </div>
